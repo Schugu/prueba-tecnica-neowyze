@@ -1,6 +1,6 @@
 import "./globals.css";
 import { trispace } from "./fonts.js";
-import Header from "./components/header/header.jsx";
+import Header from "./components/header/Header.jsx";
 
 export const metadata = {
   title: "StarWars",
