@@ -19,16 +19,38 @@ export default function Page() {
   }, []);
 
 
+
+  const handleOrdenLanzamiento = () => {
+    const ordenLanzamiento = [...peliculas].sort((a, b) => {
+      return new Date(a.release_date).getTime() - new Date(b.release_date).getTime();
+    });
+
+    setPeliculas(ordenLanzamiento);
+  };
+
+
+  const handleOrdenCronologia = () => {
+    const ordenCronologia = [...peliculas].sort((a, b) => {
+      return a.episode_id - b.episode_id;
+    });
+
+    setPeliculas(ordenCronologia);
+  };
+
+
   return (
-    <div className="p-2 flex flex-col gap-4">
-      <h2>Ordenar por:</h2>
-      <section>
-        <button >Lanzamiento</button>
-        <button >Cronologia</button>
+    <div className="p-2 flex flex-col gap-8 items-center">
+      <section className="flex flex-col gap-2 items-center">
+        <h2>Ordenar por:</h2>
+        <article className="flex gap-10">
+          <button onClick={handleOrdenLanzamiento}>Lanzamiento</button>
+          <button onClick={handleOrdenCronologia}>Cronologia</button>
+        </article>
       </section>
 
+      <section className="flex flex-col gap-4 items-center w-full"> 
       {peliculas.map((pelicula) => (
-        <section key={pelicula.title} className="flex gap-2">
+        <article key={pelicula.title} className="flex w-full gap-2 justify-start">
           <Image
             src='/R2D2.png'
             alt="Pelicula"
@@ -39,10 +61,9 @@ export default function Page() {
             <h2>Título: {pelicula.title}</h2>
             <h2>Capitulo: {pelicula.episode_id}</h2>
           </article>
-
-        </section>
+        </article>
       ))}
-
+      </section>
     </div>
   );
 }
