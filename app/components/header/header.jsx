@@ -18,7 +18,7 @@ export default function Header() {
 
       <article className={styles.botones}>
         <Link
-          href="peliculas"
+          href="/peliculas"
           className={`
             ${styles.boton}
             ${pathname === '/peliculas' ? 'text-yellow-500' : ''}
@@ -26,7 +26,7 @@ export default function Header() {
         >Peliculas</Link>
 
         <Link
-          href="personajes"
+          href="/personajes"
           className={`
           ${styles.boton}
           ${pathname === '/personajes' ? 'text-yellow-500' : ''}

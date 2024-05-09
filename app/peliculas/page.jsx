@@ -12,7 +12,7 @@ export default function Page() {
         const data = await fetchFilms();
         setPeliculas(data.results);
       } catch (error) {
-        console.error("Error fetching films:", error);
+        console.error("Error al hacer fetch");
       }
     };
     fetchData();
@@ -57,10 +57,10 @@ export default function Page() {
             width={150}
             height={150}
           ></Image>
-          <article className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2">
             <h2>Título: {pelicula.title}</h2>
-            <h2>Capitulo: {pelicula.episode_id}</h2>
-          </article>
+            <h2>Episodio: {pelicula.episode_id}</h2>
+          </div>
         </article>
       ))}
       </section>
