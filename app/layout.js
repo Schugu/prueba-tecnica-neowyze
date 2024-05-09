@@ -1,8 +1,6 @@
-import { Inter } from "next/font/google";
-import {  } from "../public/chewbacca_icon.svg";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { trispace } from "./fonts.js";
+import Header from "./components/header/header.jsx";
 
 export const metadata = {
   title: "StarWars",
@@ -15,7 +13,11 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="shortcut icon" href="/chewbacca_icon.svg" />
       </head>
-      <body className={inter.className}>{children}</body>
+
+      <body className={`${trispace.className} antialiased`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

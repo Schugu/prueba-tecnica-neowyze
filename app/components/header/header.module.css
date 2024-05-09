@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #ffd700;
+  padding: 10px;
+}
+
+.titulo {
+  text-shadow:
+    -1px -1px 0 #ffd700,
+    1px -1px 0 #ffd700,
+    -1px 1px 0 #ffd700,
+    1px 1px 0 #ffd700;
+  color: black;
+  font-size: 2em;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.boton {
+  font-size: 1.5em;
+}
