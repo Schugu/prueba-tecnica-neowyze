@@ -6,6 +6,7 @@ import Link from "next/link.js";
 
 export default function Page() {
   const [peliculas, setPeliculas] = useState([]);
+  const [botonActivo, setBotonActivo] = useState('lanzamiento');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,19 +23,19 @@ export default function Page() {
 
 
   const handleOrdenLanzamiento = () => {
+    setBotonActivo('lanzamiento');
     const ordenLanzamiento = [...peliculas].sort((a, b) => {
       return new Date(a.release_date).getTime() - new Date(b.release_date).getTime();
     });
-
     setPeliculas(ordenLanzamiento);
   };
 
 
   const handleOrdenCronologia = () => {
+    setBotonActivo('cronologia');
     const ordenCronologia = [...peliculas].sort((a, b) => {
       return a.episode_id - b.episode_id;
     });
-
     setPeliculas(ordenCronologia);
   };
 
@@ -44,8 +45,13 @@ export default function Page() {
       <section className="flex flex-col gap-2 items-center">
         <h2>Ordenar por:</h2>
         <article className="flex gap-10">
-          <button onClick={handleOrdenLanzamiento}>Lanzamiento</button>
-          <button onClick={handleOrdenCronologia}>Cronologia</button>
+          <button
+            className={botonActivo === 'lanzamiento' ? 'text-yellow-500' : 'text-white'}
+            onClick={handleOrdenLanzamiento}>Lanzamiento</button>
+
+          <button
+            className={botonActivo === 'cronologia' ? 'text-yellow-500' : 'text-white'}
+            onClick={handleOrdenCronologia}>Cronologia</button>
         </article>
       </section>
 
