@@ -3,33 +3,36 @@ import { useEffect, useState } from "react";
 import { fetchCharactersByPage } from "../../../lib/data.js";
 
 import Image from "next/image.js";
+import Link from "next/link.js";
 
-export default function Page( params ) {
-  const [personajes, setPersonajes] = useState([]);
+export default function Page(params) {
+  const [info, setInfo] = useState({ results: [] });
+  const indicePage = parseInt(params.params.page);
+  const pageNumbers = Array.from({ length: 9 }, (_, index) => index + 1);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchCharactersByPage(parseInt(params.params.page));
-        setPersonajes(data.results);
+        const data = await fetchCharactersByPage(indicePage);
+        setInfo(data);
 
       } catch (error) {
         console.log('Error al hacer fetch');
       }
     };
     fetchData();
-  }, [params]);
+  }, [indicePage]);
 
-  console.log(personajes);
 
   return (
-    <div>Personajes Page
-      
+    <div>
+      <h1>Personajes totales {info.count + 1}</h1>
+
 
 
       <article className="flex gap-2 flex-wrap justify-center">
         {
-          personajes.map((personaje) => (
+          (info.results).map((personaje) => (
             <div
               key={personaje.url}
               className="
@@ -48,7 +51,33 @@ export default function Page( params ) {
             </div>
           ))
         }
+      </article>
 
+      <article className="flex flex-col gap-2 items-center p-2">
+        <h4>Barra de navegación</h4>
+
+        <div className="flex gap-2 text-xl">
+          {info.previous !== null &&
+            <Link href={`/personajes/page/${indicePage - 1}`}>
+              {`<`}
+            </Link>
+          }
+
+          {pageNumbers.map((pageNumber) => (
+            <Link
+              key={pageNumber}
+              href={`/personajes/page/${pageNumber}`}
+              className={pageNumber === indicePage ? 'text-yellow-500' : ''}
+            >{pageNumber}
+            </Link>
+          ))}
+
+          {info.next !== null &&
+            <Link href={`/personajes/page/${indicePage + 1}`}>
+              {`>`}
+            </Link>
+          }
+        </div>
       </article>
     </div>
   )
