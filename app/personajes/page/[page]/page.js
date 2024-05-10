@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import { fetchCharactersByPage } from "../../../lib/data.js";
+import { fetchCharactersByPage, urlToIdCharacter } from "../../../lib/data.js";
 
 import Image from "next/image.js";
 import Link from "next/link.js";
@@ -23,7 +23,6 @@ export default function Page(params) {
     fetchData();
   }, [indicePage]);
 
-
   return (
     <div>
       <h1>Personajes totales {info.count + 1}</h1>
@@ -33,7 +32,8 @@ export default function Page(params) {
       <article className="flex gap-2 flex-wrap justify-center">
         {
           (info.results).map((personaje) => (
-            <div
+            <Link
+              href={`/personajes/${urlToIdCharacter(personaje.url)}`}
               key={personaje.url}
               className="
               w-40 h-51 flex flex-col items-center justify-start gap-2 
@@ -43,12 +43,20 @@ export default function Page(params) {
               ">
               <Image
                 src='/R2D2.png'
-                alt="Pelicula"
+                alt="Personaje"
                 width={150}
                 height={150}
               ></Image>
               <h3 className="w-full text-center">{personaje.name}</h3>
-            </div>
+              {
+                personaje.eye_color !== 'n/a' && personaje.eye_color !== 'unknown' &&
+                <h5 className="text-center">Color de ojos: {personaje.eye_color}</h5>
+              }
+              {
+                personaje.gender !== 'n/a' && personaje.gender !== 'unknown' &&
+                <h5 className="text-center">Género: {personaje.gender}</h5>
+              }
+            </Link>
           ))
         }
       </article>

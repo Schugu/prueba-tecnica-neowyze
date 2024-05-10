@@ -21,15 +21,15 @@ export default function Header() {
           href="/peliculas"
           className={`
             ${styles.boton}
-            ${pathname === '/peliculas' ? 'text-yellow-500' : ''}
+            ${ pathname.includes('/peliculas') ? 'text-yellow-500' : ''}
           `}
         >Peliculas</Link>
 
         <Link
-          href="/personajes"
+          href="/personajes/page/1"
           className={`
           ${styles.boton}
-          ${pathname === '/personajes' ? 'text-yellow-500' : ''}
+          ${ pathname.includes('/personajes') ? 'text-yellow-500' : ''}
         `}
         >Personajes</Link>
       </article>
