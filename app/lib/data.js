@@ -22,9 +22,9 @@ export async function fetchFilmsById(id) {
 }
 
 // Todos los personajes
-export async function fetchCharacters() {
+export async function fetchCharactersByPage(pageNum) {
   try {
-    const response = await fetch('https://swapi.dev/api/people');
+    const response = await fetch(`https://swapi.dev/api/people/?page=${pageNum}`);
     const data = await response.json();
     return data; 
   } catch (error) {
@@ -42,6 +42,7 @@ export async function fetchCharacterByUrl(url) {
     console.log('Error al hacer fetch');
   }
 }
+
 
 
 
