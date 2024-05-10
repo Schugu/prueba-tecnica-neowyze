@@ -1,8 +1,9 @@
 'use client'
-import { useEffect, useState } from "react";
-import { fetchFilmsById, fetchCharacterByUrl } from "../../lib/data.js";
+import { useEffect, useState} from "react";
+import { fetchFilmsById, fetchCharacterByUrl, urlToIdCharacter } from "../../lib/data.js";
 
 import Image from "next/image.js";
+import Link from "next/link.js";
 
 export default function Page(params) {
   const [pelicula, setPelicula] = useState({});
@@ -48,7 +49,8 @@ export default function Page(params) {
       <article className="flex gap-2 flex-wrap justify-center">
         {
           personajes.map((personaje) => (
-            <div
+            <Link
+              href={`/personajes/${urlToIdCharacter(personaje.url)}`}
               key={personaje.url}
               className="
               w-40 h-51 flex flex-col items-center justify-start gap-2 
@@ -63,7 +65,7 @@ export default function Page(params) {
                 height={150}
               ></Image>
               <h3 className="w-full text-center">{personaje.name}</h3>
-            </div>
+            </Link>
           ))
         }
 
