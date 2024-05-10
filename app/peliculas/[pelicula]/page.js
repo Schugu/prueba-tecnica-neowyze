@@ -24,9 +24,6 @@ export default function Page(params) {
     fetchData();
   }, [params]);
 
-
-
-  console.log(personajes);
   return (
     <section className="flex flex-col gap-4 items-center w-full p-4">
       <article className="flex w-full gap-2 justify-center flex-wrap">
@@ -51,7 +48,14 @@ export default function Page(params) {
       <article className="flex gap-2 flex-wrap justify-center">
         {
           personajes.map((personaje) => (
-            <div key={personaje.url} className="w-40 h-51 flex flex-col items-center justify-start gap-2">
+            <div
+              key={personaje.url}
+              className="
+              w-40 h-51 flex flex-col items-center justify-start gap-2 
+              border border-solid border-yellow-500
+              hover:bg-yellow-500 hover:bg-opacity-15
+              cursor-pointer
+              ">
               <Image
                 src='/R2D2.png'
                 alt="Pelicula"
