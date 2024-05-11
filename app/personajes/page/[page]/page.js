@@ -24,9 +24,9 @@ export default function Page(params) {
   }, [indicePage]);
 
   return (
-    <div>
-      <h1>Personajes totales {info.count + 1}</h1>
-
+    <div className="flex flex-col gap-4 items-center p-4">
+      <h1>Personajes totales: {info.count + 1}</h1>
+      <Link href='/personajes/filtrar'>Filtrar</Link>
 
 
       <article className="flex gap-2 flex-wrap justify-center">

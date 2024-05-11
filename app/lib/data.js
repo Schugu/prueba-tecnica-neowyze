@@ -54,6 +54,24 @@ export async function fetchCharacterById(id) {
   }
 }
 
+// TODOS los personajes
+export async function fetchAllCharacters() {
+  try {
+    const promises = [];
+
+    for (let i = 1; i <= 9; i++) {
+      promises.push(fetchCharactersByPage(i));
+    }
+
+    const responses = await Promise.all(promises);
+    const allCharacters = responses.flatMap(response => response.results);
+
+    return allCharacters;
+  } catch (error) {
+    console.error('Error al hacer fetch:', error);
+    throw error;
+  }
+}
 
 
 export function urlToIdCharacter(url) {
@@ -64,3 +82,6 @@ export function urlToIdCharacter(url) {
     return id;
   }
 }
+
+
+
