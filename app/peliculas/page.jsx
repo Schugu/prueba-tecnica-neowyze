@@ -20,8 +20,6 @@ export default function Page() {
     fetchData();
   }, []);
 
-
-
   const handleOrdenLanzamiento = () => {
     setBotonActivo('lanzamiento');
     const ordenLanzamiento = [...peliculas].sort((a, b) => {
@@ -30,7 +28,6 @@ export default function Page() {
     setPeliculas(ordenLanzamiento);
   };
 
-
   const handleOrdenCronologia = () => {
     setBotonActivo('cronologia');
     const ordenCronologia = [...peliculas].sort((a, b) => {
@@ -38,7 +35,6 @@ export default function Page() {
     });
     setPeliculas(ordenCronologia);
   };
-
 
   return (
     <div className="p-2 flex flex-col gap-8 items-center">
@@ -55,27 +51,27 @@ export default function Page() {
         </article>
       </section>
 
-      <section className="flex flex-col gap-4 items-center w-full">
-        {peliculas.map((pelicula) => (
-          <article key={pelicula.title} className="flex w-full gap-2 justify-start">
-            <Image
-              src='/R2D2.png'
-              alt="Pelicula"
-              width={150}
-              height={150}
-            ></Image>
-            <div className="flex flex-col gap-2 w-80">
-              <h2>Título: {pelicula.title}</h2>
-              <h2>Episodio: {pelicula.episode_id}</h2>
-              <section className="flex justify-end">
-                <Link
-                  className="text-yellow-500"
-                  href={`/peliculas/${pelicula.episode_id}`}>Ver más</Link>
-              </section>
-            </div>
-          </article>
-        ))}
-      </section>
+        <section className="flex flex-col gap-4 items-center w-full">
+          {peliculas.map((pelicula) => (
+            <article key={pelicula.title} className="flex w-full gap-2 justify-start">
+              <Image
+                src='/R2D2.png'
+                alt="Pelicula"
+                width={150}
+                height={150}
+              ></Image>
+              <div className="flex flex-col gap-2 w-80">
+                <h2>Título: {pelicula.title}</h2>
+                <h2>Episodio: {pelicula.episode_id}</h2>
+                <section className="flex justify-end">
+                  <Link
+                    className="text-yellow-500"
+                    href={`/peliculas/${pelicula.episode_id}`}>Ver más</Link>
+                </section>
+              </div>
+            </article>
+          ))}
+        </section>
     </div>
   );
 }

@@ -1,29 +1,21 @@
-'use client'
-import { useEffect, useState} from "react";
-import { fetchFilmsById, fetchCharacterByUrl, urlToIdCharacter } from "../../lib/data.js";
+import { Suspense } from "react";
+import { fetchFilmsById, fetchCharacterByUrl } from "../../lib/data.js";
 
 import Image from "next/image.js";
-import Link from "next/link.js";
+import dynamic from "next/dynamic.js";
 
-export default function Page(params) {
-  const [pelicula, setPelicula] = useState({});
-  const [personajes, setPersonajes] = useState([]);
+const PersonajeLista = dynamic(() => import('./personajesLista.js'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false
+});
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fetchFilmsById(parseInt(params.params.pelicula));
-        setPelicula(data);
+export default async function Page(params) {
+  const data = await fetchFilmsById(parseInt(params.params.pelicula));
+  const pelicula = data;
 
-        const personajesDataPromesas = data.characters.map(url => fetchCharacterByUrl(url));
-        const personajesData = await Promise.all(personajesDataPromesas);
-        setPersonajes(personajesData);
-      } catch (error) {
-        console.log('Error al hacer fetch');
-      }
-    };
-    fetchData();
-  }, [params]);
+  const personajesDataPromesas = data.characters.map(url => fetchCharacterByUrl(url));
+  const personajesData = await Promise.all(personajesDataPromesas);
+  const personajes = personajesData;
 
   return (
     <section className="flex flex-col gap-4 items-center w-full p-4">
@@ -47,30 +39,11 @@ export default function Page(params) {
       <h2>Personajes</h2>
 
       <article className="flex gap-2 flex-wrap justify-center">
-        {
-          personajes.map((personaje) => (
-            <Link
-              href={`/personajes/${urlToIdCharacter(personaje.url)}`}
-              key={personaje.url}
-              className="
-              w-40 h-51 flex flex-col items-center justify-start gap-2 
-              border border-solid border-yellow-500
-              hover:bg-yellow-500 hover:bg-opacity-15
-              cursor-pointer
-              ">
-              <Image
-                src='/R2D2.png'
-                alt="Pelicula"
-                width={150}
-                height={150}
-              ></Image>
-              <h3 className="w-full text-center">{personaje.name}</h3>
-            </Link>
-          ))
-        }
+        <Suspense>
+          <PersonajeLista personajes={personajes} />
+        </Suspense>
 
       </article>
     </section>
   )
 }
-
