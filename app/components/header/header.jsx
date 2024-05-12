@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Header.module.css'
-import Image from "next/image";
 import { orbitron } from "../../fonts.js";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
