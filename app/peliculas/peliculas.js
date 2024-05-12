@@ -7,7 +7,9 @@ export default async function Peliculas({ dataPeliculas }) {
     <>
       {
         dataPeliculas.map((pelicula) => (
-          <article key={pelicula.title} className="flex w-full gap-2 justify-center h-32">
+          <article key={pelicula.title} className="flex w-full gap-2 items-end justify-center h-32
+            border-b border-yellow-500
+          ">
             <Image
               src='/R2D2.png'
               alt="Pelicula"
@@ -19,7 +21,7 @@ export default async function Peliculas({ dataPeliculas }) {
               <h2>Episodio: {pelicula.episode_id}</h2>
               <section className="flex justify-end">
                 <Link
-                  className="text-yellow-500"
+                  className="text-yellow-500 hover:text-white transition duration-200 ease-in-out "
                   href={`/peliculas/${pelicula.episode_id}`}>Ver más</Link>
               </section>
             </div>

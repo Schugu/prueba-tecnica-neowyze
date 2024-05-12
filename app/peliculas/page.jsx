@@ -43,16 +43,18 @@ export default function Page() {
   };
 
   return (
-    <div className="p-2 flex flex-col gap-8 items-center">
+    <div className="p-4 flex flex-col gap-8 items-center">
       <section className="flex flex-col gap-2 items-center">
         <h2>Ordenar por:</h2>
         <article className="flex gap-10">
           <button
-            className={botonActivo === 'lanzamiento' ? 'text-yellow-500' : 'text-white'}
+            className={`hover:border-yellow-500 hover:border-b transition duration-200 ease-in-out  
+            ${botonActivo === 'lanzamiento' ? 'text-yellow-500' : 'text-white'}`}
             onClick={handleOrdenLanzamiento}>Lanzamiento</button>
 
           <button
-            className={botonActivo === 'cronologia' ? 'text-yellow-500' : 'text-white'}
+            className={`hover:border-yellow-500 hover:border-b transition duration-200 ease-in-out   
+            ${botonActivo === 'cronologia' ? 'text-yellow-500' : 'text-white'}`}
             onClick={handleOrdenCronologia}>Cronologia</button>
         </article>
       </section>
