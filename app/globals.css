@@ -31,3 +31,14 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.titulo {
+  text-shadow:
+    -1px -1px 0 #ffd700,
+    1px -1px 0 #ffd700,
+    -1px 1px 0 #ffd700,
+    1px 1px 0 #ffd700;
+  color: black;
+  font-size: 2em;
+}
