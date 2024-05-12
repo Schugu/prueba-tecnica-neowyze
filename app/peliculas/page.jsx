@@ -1,18 +1,24 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { fetchFilms } from "../lib/data.js";
-import Image from "next/image.js";
-import Link from "next/link.js";
+
+import SkeletonPeliculas from "./skeletons/peliculas.js";
+import dynamic from "next/dynamic.js";
+
+const Peliculas = dynamic(() => import('./peliculas.js'), {
+  loading: () => <SkeletonPeliculas />,
+  ssr: false
+});
 
 export default function Page() {
-  const [peliculas, setPeliculas] = useState([]);
+  const [dataPeliculas, setDataPeliculas] = useState([]);
   const [botonActivo, setBotonActivo] = useState('lanzamiento');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchFilms();
-        setPeliculas(data.results);
+        setDataPeliculas(data.results);
       } catch (error) {
         console.error("Error al hacer fetch");
       }
@@ -22,18 +28,18 @@ export default function Page() {
 
   const handleOrdenLanzamiento = () => {
     setBotonActivo('lanzamiento');
-    const ordenLanzamiento = [...peliculas].sort((a, b) => {
+    const ordenLanzamiento = [...dataPeliculas].sort((a, b) => {
       return new Date(a.release_date).getTime() - new Date(b.release_date).getTime();
     });
-    setPeliculas(ordenLanzamiento);
+    setDataPeliculas(ordenLanzamiento);
   };
 
   const handleOrdenCronologia = () => {
     setBotonActivo('cronologia');
-    const ordenCronologia = [...peliculas].sort((a, b) => {
+    const ordenCronologia = [...dataPeliculas].sort((a, b) => {
       return a.episode_id - b.episode_id;
     });
-    setPeliculas(ordenCronologia);
+    setDataPeliculas(ordenCronologia);
   };
 
   return (
@@ -51,27 +57,11 @@ export default function Page() {
         </article>
       </section>
 
-        <section className="flex flex-col gap-4 items-center w-full">
-          {peliculas.map((pelicula) => (
-            <article key={pelicula.title} className="flex w-full gap-2 justify-start">
-              <Image
-                src='/R2D2.png'
-                alt="Pelicula"
-                width={150}
-                height={150}
-              ></Image>
-              <div className="flex flex-col gap-2 w-80">
-                <h2>Título: {pelicula.title}</h2>
-                <h2>Episodio: {pelicula.episode_id}</h2>
-                <section className="flex justify-end">
-                  <Link
-                    className="text-yellow-500"
-                    href={`/peliculas/${pelicula.episode_id}`}>Ver más</Link>
-                </section>
-              </div>
-            </article>
-          ))}
-        </section>
+      <section className="flex flex-col gap-4 items-center w-full">
+        <Suspense>
+          <Peliculas dataPeliculas={dataPeliculas}/>
+        </Suspense>
+      </section>
     </div>
   );
 }
