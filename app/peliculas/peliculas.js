@@ -2,12 +2,12 @@ import Image from "next/image.js";
 import Link from "next/link.js";
 
 export default async function Peliculas({ dataPeliculas }) {
-    //  await new Promise((resolve) => setTimeout(resolve, 10000));
+  //  await new Promise((resolve) => setTimeout(resolve, 10000));
   return (
     <>
       {
         dataPeliculas.map((pelicula) => (
-          <article key={pelicula.title} className="flex w-full gap-2 items-end justify-center h-32
+          <article key={pelicula.title} className="flex min-w-32 max-w-2xl gap-2 items-end justify-center h-32
             border-b border-yellow-500
           ">
             <Image
@@ -17,11 +17,11 @@ export default async function Peliculas({ dataPeliculas }) {
               height={150}
             ></Image>
             <div className="flex flex-col gap-2 w-80">
-              <h2>Título: {pelicula.title}</h2>
-              <h2>Episodio: {pelicula.episode_id}</h2>
+              <h2><span className="text-yellow-500">Título:</span> {pelicula.title}</h2>
+              <h2><span className="text-yellow-500">Episodio:</span> {pelicula.episode_id}</h2>
               <section className="flex justify-end">
                 <Link
-                  className="text-yellow-500 hover:text-white transition duration-200 ease-in-out "
+                  className="text-yellow-500 hover:text-white transition duration-200 ease-in-out pr-2"
                   href={`/peliculas/${pelicula.episode_id}`}>Ver más</Link>
               </section>
             </div>

@@ -7,7 +7,7 @@ export default function SkeletonPeliculas() {
         arr.map((x, index) => (
           <article
             key={index}
-            className="flex gap-2 justify-start h-32 border border-solid
+            className="flex gap-2 min-w-32 max-w-2xl justify-start h-32 border border-solid
              border-yellow-500 border-opacity-50 bg-yellow-500 bg-opacity-15 
              rounded-sm p-2"
           >

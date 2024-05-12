@@ -24,14 +24,14 @@ export default async function Page(params) {
   const personajes = personajesData;
 
   return (
-    <section className="flex flex-col gap-4 items-center w-full p-4">
+    <section className="flex flex-col gap-6 items-center w-full p-4">
       <Suspense>
         <Pelicula peliculaData={peliculaData}/>
       </Suspense>
 
-      <h2>Personajes</h2>
 
       <article className="flex gap-2 flex-wrap justify-center w-full">
+      <h2 className="w-11/12 text-xl border-b-2 border-yellow-500 text-center">Personajes</h2>
         <Suspense>
           <PersonajeLista personajes={personajes} />
         </Suspense>

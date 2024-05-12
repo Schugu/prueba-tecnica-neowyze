@@ -17,17 +17,17 @@ export default function Header() {
       <article className="botones flex flex-wrap justify-center gap-20 cursor-pointer">
         <Link
           href="/peliculas"
-          className={`
+          className={` transition duration-200 ease-in-out               
           boton text-xl
-            ${ pathname.includes('/peliculas') ? 'text-yellow-500' : ''}
+            ${pathname.includes('/peliculas') ? 'text-yellow-500' : 'text-white hover:text-yellow-500'}
           `}
         >Peliculas</Link>
 
         <Link
           href="/personajes/page/1"
-          className={`
+          className={` transition duration-200 ease-in-out 
           boton text-xl
-          ${ pathname.includes('/personajes') ? 'text-yellow-500' : ''}
+          ${pathname.includes('/personajes') ? 'text-yellow-500' : 'text-white hover:text-yellow-500'}
         `}
         >Personajes</Link>
       </article>

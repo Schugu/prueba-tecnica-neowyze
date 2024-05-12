@@ -20,8 +20,10 @@ export default async function Page(params) {
 
   return (
     <div className="flex flex-col gap-4 items-center p-4">
-      <h1>Personajes totales: {info.count + 1}</h1>
-      <Link href='/personajes/filtrar'>Filtrar</Link>
+      <h1 className="border-b border-yellow-500 px-2">Personajes totales: {info.count + 1}</h1>
+      <Link href='/personajes/filtrar' className="border border-yellow-500 px-2
+      bg-yellow-500 bg-opacity-15 hover:text-yellow-500 hover:bg-white hover:bg-opacity-15
+      ">Filtrar</Link>
 
 
       <article className="flex gap-2 flex-wrap justify-center">

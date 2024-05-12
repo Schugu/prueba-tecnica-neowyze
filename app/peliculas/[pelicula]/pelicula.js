@@ -14,9 +14,9 @@ export default async function Pelicula({peliculaData}) {
         </div>
 
         <div className="flex flex-col justify-center ">
-          <h2>Titulo: {peliculaData.title}</h2>
-          <h2>Episodio: {peliculaData.episode_id}</h2>
-          <h2>Director: {peliculaData.director}</h2>
+          <h2 className="text-2xl"><span className="text-yellow-500">Titulo:</span> {peliculaData.title}</h2>
+          <h2 className="text-2xl"><span className="text-yellow-500">Episodio:</span> {peliculaData.episode_id}</h2>
+          <h2 className="text-2xl"><span className="text-yellow-500">Director:</span> {peliculaData.director}</h2>
         </div>
       </article>
   )

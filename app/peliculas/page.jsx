@@ -61,7 +61,7 @@ export default function Page() {
 
       <section className="flex flex-col gap-4 items-center w-full">
         <Suspense>
-          <Peliculas dataPeliculas={dataPeliculas}/>
+          <Peliculas dataPeliculas={dataPeliculas} />
         </Suspense>
       </section>
     </div>
