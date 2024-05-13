@@ -12,7 +12,7 @@ export default function personaje({ info }) {
             href={`/personajes/${urlToIdCharacter(personaje.url)}`}
             key={personaje.url}
             className="
-              w-40 h-72 flex flex-col items-center justify-start gap-2 p-2
+              w-44 h-72 flex flex-col items-center justify-start gap-2 p-2
               border border-solid border-yellow-500
               hover:bg-yellow-500 hover:bg-opacity-15
               cursor-pointer

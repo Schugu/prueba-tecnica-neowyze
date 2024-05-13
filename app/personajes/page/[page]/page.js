@@ -26,7 +26,7 @@ export default async function Page(params) {
       ">Filtrar</Link>
 
 
-      <article className="flex gap-2 flex-wrap justify-center">
+      <article className="flex gap-2 flex-wrap justify-center lg:grid lg:grid-cols-5">
         <Suspense>
           <Personajes info={info} />
         </Suspense>
