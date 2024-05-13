@@ -43,17 +43,17 @@ export default function Page() {
   };
 
   return (
-    <div className="p-4 flex flex-col gap-8 items-center">
-      <section className="flex flex-col gap-2 items-center">
-        <h2>Ordenar por:</h2>
-        <article className="flex gap-10">
+    <div className="p-4 flex flex-col gap-4 items-center">
+      <section className="flex flex-col gap-2 items-center w-full">
+        <h2 className="text-2xl">Ordenar por:</h2>
+        <article className="flex gap-10 justify-center border-b border-yellow-500 pb-2 w-5/6">
           <button
-            className={`hover:border-yellow-500 hover:border-b transition duration-200 ease-in-out  
+            className={`text-xl hover:border-yellow-500 hover:border-b transition duration-200 ease-in-out  
             ${botonActivo === 'lanzamiento' ? 'text-yellow-500' : 'text-white'}`}
             onClick={handleOrdenLanzamiento}>Lanzamiento</button>
 
           <button
-            className={`hover:border-yellow-500 hover:border-b transition duration-200 ease-in-out   
+            className={`text-xl hover:border-yellow-500 hover:border-b transition duration-200 ease-in-out   
             ${botonActivo === 'cronologia' ? 'text-yellow-500' : 'text-white'}`}
             onClick={handleOrdenCronologia}>Cronologia</button>
         </article>

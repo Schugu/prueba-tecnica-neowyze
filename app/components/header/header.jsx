@@ -11,10 +11,10 @@ export default function Header() {
     <section className="w-full bg-black flex flex-col items-center border-b-2 border-yellow-400 py-2">
       <Link
         href="/"
-        className={`titulo ${orbitron.className} antialiased`}
+        className={`titulo ${orbitron.className} antialiased text-center`}
       >Star Wars</Link>
 
-      <article className="botones flex flex-wrap justify-center gap-20 cursor-pointer">
+      <article className="botones flex flex-wrap justify-center gap-2 cursor-pointer">
         <Link
           href="/peliculas"
           className={` transition duration-200 ease-in-out               

@@ -35,12 +35,12 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-2 items-center p-2 w-full">
-      <h2>Filtrar:</h2>
+      <h1 className="text-yellow-500 text-2xl">Filtrar:</h1>
 
-      <section className="flex flex-wrap gap-10 justify-around w-full">
-        <article className="w-1/3 flex flex-col gap-2 items-center">
-          <label htmlFor="category" className="w-full">Categoria</label>
-          <select className="bg-black text-yellow-500 w-full"
+      <section className="flex flex-wrap gap-6 justify-center border-b border-yellow-500 pb-2 w-96">
+        <article className="w-40 flex flex-col gap-2 items-center">
+          <h2 className="w-full text-center text-xl">Categoria</h2>
+          <select className="bg-black text-yellow-500 w-full border border-yellow-500 rounded-sm p-1"
             name="category"
             id="category"
             value={selectedCategory}
@@ -54,10 +54,11 @@ export default function Page() {
           </select>
         </article>
 
-        <article className="w-1/3">
-          <label htmlFor="option" className="w-full">Opción</label>
+        <article className="w-40 flex flex-col gap-2 items-center">
+          <h2 className="w-full text-center text-xl">Opción</h2>
           <select
-            className="bg-black text-yellow-500 w-full"
+            className="bg-black text-yellow-500 w-full
+            border border-yellow-500 rounded-sm p-1"
             name="option"
             id="option"
             value={selectedOption}
@@ -102,10 +103,11 @@ export default function Page() {
               </Link>
             ) : null
           )}
-          {personajes.every((personaje) => personaje[selectedCategory] !== selectedOption) && (
-            <h2>No se encontró nada</h2>
-          )}
         </article>
+
+        {personajes.every((personaje) => personaje[selectedCategory] !== selectedOption) && (
+          <h2>No se encontró nada</h2>
+        )}
       </section>
     </div>
   )
