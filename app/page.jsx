@@ -5,13 +5,14 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center gap-4 p-4 min-h-screen">
       <Image
+        tabIndex={4}
         width={700}
         height={300}
         src='/star-wars.jpg'
         alt="Portada"
         className="w-2/5"
       ></Image>
-      <p className="indent-16 inline-block">
+      <p className="indent-16 inline-block" tabIndex={5}>
         En una galaxia lejana, en un tiempo de conflictos interminables y héroes
         inesperados, la Fuerza sigue siendo el hilo conductor que une los destinos
         de aquellos que se atreven a desafiar el lado oscuro. En los confines del
@@ -20,7 +21,7 @@ export default function Home() {
         justicia, se alzan nuevamente para restaurar el equilibrio en la galaxia.
       </p>
 
-      <p className="indent-16 inline-block">
+      <p className="indent-16 inline-block" tabIndex={6}>
         En medio de este caos galáctico, nuevos héroes surgen para enfrentar su
         propio destino. Desde los rincones más remotos de los planetas periféricos
         hasta las imponentes naves de guerra, la esperanza brilla como una estrella
@@ -28,7 +29,7 @@ export default function Home() {
         por la libertad y la redención.
       </p>
 
-      <p className="indent-16 inline-block">
+      <p className="indent-16 inline-block" tabIndex={7}>
         En este universo de aventuras sin fin, donde los saberes antiguos se entrelazan
         con la tecnología más avanzada, donde la amistad y el amor desafían al odio y
         la desesperación, cada paso es una elección que puede cambiar el curso de la
