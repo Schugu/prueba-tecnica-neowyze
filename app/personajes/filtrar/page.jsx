@@ -82,7 +82,7 @@ export default function Page() {
               <Link
                 href={`/personajes/${urlToIdCharacter(personaje.url)}`}
                 key={personaje.url}
-                className="w-80 h-44 c:w-40 c:h-51 flex c:flex-col items-center justify-start gap-2 
+                className="w-80 h-52 c:w-40 c:h-72 flex c:flex-col items-center justify-start gap-2 
             border border-solid border-yellow-500
             hover:bg-yellow-500 hover:bg-opacity-15
             cursor-pointer"
