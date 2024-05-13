@@ -8,7 +8,7 @@ export default async function Peliculas({ dataPeliculas }) {
       {
         dataPeliculas.map((pelicula, index) => (
           <article key={pelicula.title} className="flex min-w-32 max-w-2xl gap-2 items-end justify-center h-32
-            border-b border-yellow-500
+            border-b border-yellow-500 
           ">
             <Image
               src='/R2D2.png'

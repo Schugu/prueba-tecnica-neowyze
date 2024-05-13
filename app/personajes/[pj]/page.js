@@ -18,7 +18,7 @@ export default async function Page(params) {
 
 
   return (
-    <div className="flex flex-col gap-2 items-center w-full p-2">
+    <div className="flex flex-col gap-2 items-center w-full p-2 min-h-screen">
       <Suspense>
         <Personaje dataPersonaje={dataPersonaje} />
       </Suspense>

@@ -34,7 +34,7 @@ export default function Page() {
 
 
   return (
-    <div className="flex flex-col gap-2 items-center p-2 w-full">
+    <div className="flex flex-col gap-2 items-center p-2 w-full min-h-screen">
       <h1 tabIndex={4} className="text-yellow-500 text-2xl">Filtrar:</h1>
 
       <section className="flex flex-wrap gap-6 justify-center border-b border-yellow-500 pb-2 w-96">

@@ -1,6 +1,7 @@
 import "./globals.css";
 import { trispace } from "./fonts.js";
 import Header from "./components/header/Header.jsx";
+import Footer from "./components//footer/Footer.jsx";
 
 export const metadata = {
   title: "StarWars",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <body className={`${trispace.className} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
