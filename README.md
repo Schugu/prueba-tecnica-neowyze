@@ -1,6 +1,6 @@
 <h1 align='center'>🌟 Star Wars Page🌌🚀🌟</h1>
 
-> Prueba técnica de NEOWYZE con Next.js ✨
+> Prueba técnica de NEOWYZE con Next.js y Tailwind CSS ✨
 
 🎯 Objetivo:  Desarrollar una aplicación web con motivo a las películas de Star Wars.
 
