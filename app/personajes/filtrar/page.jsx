@@ -76,14 +76,13 @@ export default function Page() {
       </section>
 
       <section className="flex justify-center">
-        <article className="flex gap-2 flex-wrap justify-center">
+        <article className="flex gap-2 flex-wrap justify-center p-2">
           {personajes.map((personaje) =>
             personaje[selectedCategory] === selectedOption ? (
               <Link
                 href={`/personajes/${urlToIdCharacter(personaje.url)}`}
                 key={personaje.url}
-                className="
-            w-40 h-51 flex flex-col items-center justify-start gap-2 
+                className="w-80 h-44 c:w-40 c:h-51 flex c:flex-col items-center justify-start gap-2 
             border border-solid border-yellow-500
             hover:bg-yellow-500 hover:bg-opacity-15
             cursor-pointer"
@@ -94,13 +93,15 @@ export default function Page() {
                   width={150}
                   height={150}
                 />
-                <h3 className="w-full text-center">{personaje.name}</h3>
-                {selectedCategory === "eye_color" && personaje.eye_color !== "n/a" && personaje.eye_color !== "unknown" && (
-                  <h5 className="text-center">Color de ojos: {personaje.eye_color}</h5>
-                )}
-                {selectedCategory === "gender" && personaje.gender !== "n/a" && personaje.gender !== "unknown" && (
-                  <h5 className="text-center">Género: {personaje.gender}</h5>
-                )}
+                <div className="flex flex-col gap-2 w-full">
+                  <p className="w-full text-center text-yellow-500">{personaje.name}</p>
+                  {personaje.eye_color !== "n/a" && personaje.eye_color !== "unknown" && (
+                    <p className="text-center">Color de ojos: {personaje.eye_color}</p>
+                  )}
+                  {personaje.gender !== "n/a" && personaje.gender !== "unknown" && (
+                    <p className="text-center">Género: {personaje.gender}</p>
+                  )}
+                </div>
               </Link>
             ) : null
           )}
