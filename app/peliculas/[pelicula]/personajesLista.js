@@ -8,8 +8,9 @@ export default async function PersonajesLista({ personajes }) {
   return (
     <>
       {
-        personajes.map((personaje) => (
+        personajes.map((personaje, index) => (
           <Link
+            tabIndex={`1${index}1`}
             href={`/personajes/${urlToIdCharacter(personaje.url)}`}
             key={personaje.url}
             className="
@@ -21,11 +22,11 @@ export default async function PersonajesLista({ personajes }) {
           >
             <Image
               src='/R2D2.png'
-              alt="Pelicula"
+              alt="Personaje"
               width={150}
               height={150}
             ></Image>
-            <h3 className="w-full text-center">{personaje.name}</h3>
+            <p className="w-full text-center">{personaje.name}</p>
           </Link>
         ))
       }

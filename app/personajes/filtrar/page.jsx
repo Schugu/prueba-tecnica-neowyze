@@ -35,12 +35,12 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-2 items-center p-2 w-full">
-      <h1 className="text-yellow-500 text-2xl">Filtrar:</h1>
+      <h1 tabIndex={4} className="text-yellow-500 text-2xl">Filtrar:</h1>
 
       <section className="flex flex-wrap gap-6 justify-center border-b border-yellow-500 pb-2 w-96">
         <article className="w-40 flex flex-col gap-2 items-center">
-          <h2 className="w-full text-center text-xl">Categoria</h2>
-          <select className="bg-black text-yellow-500 w-full border border-yellow-500 rounded-sm p-1"
+          <h2 tabIndex={5} className="w-full text-center text-xl">Categoria</h2>
+          <select tabIndex={6} className="bg-black text-yellow-500 w-full border border-yellow-500 rounded-sm p-1"
             name="category"
             id="category"
             value={selectedCategory}
@@ -55,8 +55,9 @@ export default function Page() {
         </article>
 
         <article className="w-40 flex flex-col gap-2 items-center">
-          <h2 className="w-full text-center text-xl">Opción</h2>
+          <h2 tabIndex={7} className="w-full text-center text-xl">Opción</h2>
           <select
+            tabIndex={8}
             className="bg-black text-yellow-500 w-full
             border border-yellow-500 rounded-sm p-1"
             name="option"
@@ -106,7 +107,7 @@ export default function Page() {
         </article>
 
         {personajes.every((personaje) => personaje[selectedCategory] !== selectedOption) && (
-          <h2>No se encontró nada</h2>
+          <p tabIndex={9}>No se encontró nada</p>
         )}
       </section>
     </div>

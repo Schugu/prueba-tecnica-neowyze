@@ -31,7 +31,7 @@ export default async function Page(params) {
 
 
       <article className="flex gap-2 flex-wrap justify-center w-full">
-      <h2 className="w-11/12 text-xl border-b-2 border-yellow-500 text-center">Personajes</h2>
+      <h2 tabIndex={7} className="w-11/12 text-xl border-b-2 border-yellow-500 text-center">Personajes</h2>
         <Suspense>
           <PersonajeLista personajes={personajes} />
         </Suspense>

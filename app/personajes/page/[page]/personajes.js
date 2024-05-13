@@ -6,12 +6,13 @@ export default function personaje({ info }) {
   return (
     <>
       {
-        (info.results).map((personaje) => (
+        (info.results).map((personaje, index) => (
           <Link
+            tabIndex={`1${index}1`}
             href={`/personajes/${urlToIdCharacter(personaje.url)}`}
             key={personaje.url}
             className="
-              w-40 h-72 flex flex-col items-center justify-start gap-2 
+              w-40 h-72 flex flex-col items-center justify-start gap-2 p-2
               border border-solid border-yellow-500
               hover:bg-yellow-500 hover:bg-opacity-15
               cursor-pointer
@@ -22,14 +23,14 @@ export default function personaje({ info }) {
               width={150}
               height={150}
             ></Image>
-            <h3 className="w-full text-center">{personaje.name}</h3>
+            <p className="w-full text-center text-lg text-yellow-500">{personaje.name}</p>
             {
               personaje.eye_color !== 'n/a' && personaje.eye_color !== 'unknown' &&
-              <h5 className="text-center">Color de ojos: {personaje.eye_color}</h5>
+              <p className="text-center text-sm">Color de ojos: {personaje.eye_color}</p>
             }
             {
               personaje.gender !== 'n/a' && personaje.gender !== 'unknown' &&
-              <h5 className="text-center">Género: {personaje.gender}</h5>
+              <p className="text-center text-sm">Género: {personaje.gender}</p>
             }
           </Link>
         ))
