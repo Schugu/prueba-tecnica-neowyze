@@ -70,10 +70,10 @@ Para personalizar y comprender el proyecto, sigue estas instrucciones:
 <table width="100%">
   <tr>
     <td width="70%">
-      <h2 align=center>Computadora</h2>
+      <h2 align=center>💻 Computadora 💻</h2>
     </td>
     <td width="30%">
-        <h2 align=center>Celular</h2>
+        <h2 align=center>📱 Celular 📱</h2>
     </td>
   </tr>
    
