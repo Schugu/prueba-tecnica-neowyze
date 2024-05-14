@@ -17,11 +17,9 @@
 - ✅ Los estilos se deben desarrollar con tailwind.
 - ✅ Se espera que la aplicación web sea desarrollada con next.
 - ✅ Se debe usar la api que provee Next.
-- ✅ El lenguaje de programación es a elección del desarrollador (JavaScript o 
-- TypeScript).
+- ✅ El lenguaje de programación es a elección del desarrollador (JavaScript o TypeScript).
 - ✅ Se debe navegar entre páginas haciendo uso del sistema de rutas del framework.
-- ✅ Se espera que la data que recibe de SWAPI sea mapeada de acuerdo a como la 
-- vista va a mostrar.
+- ✅ Se espera que la data que recibe de SWAPI sea mapeada de acuerdo a como la vista va a mostrar.
 - ✅ No usar la librería que SWAPI ofrece.
 - ✅ Como plus, la aplicación puede ser Responsive
 
