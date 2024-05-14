@@ -86,7 +86,57 @@ Para personalizar y comprender el proyecto, sigue estas instrucciones:
     </td>
   </tr>
 
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla2.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive2.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
 
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla3.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive3.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
 
- 
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla4.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive4.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla5.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive5.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla6.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive6.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla7.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive7.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
 </table>
