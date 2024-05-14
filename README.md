@@ -64,6 +64,9 @@ Para personalizar y comprender el proyecto, sigue estas instrucciones:
 
 - **Archivos locales**: Si deseas modificar o entender cómo funciona el proyecto, te recomiendo revisar los archivos y carpetas dentro de `App`. En estas carpetas vas a encontrar los archivos que contienen la lógica y personalización de la página. 
 
+### Accesibilidad ♿️
+- Mi aplicación web es accesible gracias a la implementación adecuada de los atributos `tabindex`. Esto garantiza una navegación fluida y eficiente para todos los usuarios, incluidos aquellos que dependen de tecnologías de asistencia para interactuar con la aplicación.
+
 ### Capturas de pantalla 📸
 <table width="100%">
   <tr>
