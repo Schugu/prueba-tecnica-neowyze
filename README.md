@@ -67,4 +67,26 @@ Para personalizar y comprender el proyecto, sigue estas instrucciones:
 - **Archivos locales**: Si deseas modificar o entender cómo funciona el proyecto, te recomiendo revisar los archivos y carpetas dentro de `App`. En estas carpetas vas a encontrar los archivos que contienen la lógica y personalización de la página. 
 
 ### Capturas de pantalla 📸
-<img src='public/CapturaDePantalla1.png' alt='CapturaDePantalla1'>
+<table width="100%">
+  <tr>
+    <td width="70%">
+      <h2 align=center>Computadora</h2>
+    </td>
+    <td width="30%">
+        <h2 align=center>Celular</h2>
+    </td>
+  </tr>
+   
+  <tr>
+    <td align="center">
+       <img src="/public/screenshots/capturaDePantalla1.png" alt="Captura de pantalla"/>
+    </td>
+    <td align="center">
+      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive1.png" alt="Captura de pantalla"/>
+    </td>
+  </tr>
+
+
+
+ 
+</table>
