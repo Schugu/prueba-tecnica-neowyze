@@ -83,7 +83,7 @@ Para personalizar y comprender el proyecto, sigue estas instrucciones:
        <img src="/public/screenshots/capturaDePantalla1.png" alt="Captura de pantalla"/>
     </td>
     <td align="center">
-      <img height="425px" width="auto" src="/public/screenshots/capturaDePantallaResponsive1.png" alt="Captura de pantalla"/>
+      <img width="auto" src="/public/screenshots/capturaDePantallaResponsive1.png" alt="Captura de pantalla"/>
     </td>
   </tr>
 
