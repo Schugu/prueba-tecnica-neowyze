@@ -4,6 +4,10 @@
 
 🎯 Objetivo:  Desarrollar una aplicación web con motivo a las películas de Star Wars.
 
+La aplicación se conecta con SWAPI para obtener información sobre los 6 films de Star Wars. Se crea una landing page que permite la navegación entre las secciones de films y personajes. La página de films muestra el nombre, imagen genérica y número de episodio de cada film. Para la página de detalle del film, se muestra información adicional como el director y una lista de personajes relacionados. La página de personajes muestra el nombre, imagen genérica, color de ojos y género de cada personaje, con opciones de paginación o scroll infinito. Se implementan filtros por color de ojos y género que se aplican a todos los personajes. Finalmente, se crea una página de detalle del personaje que muestra información detallada, omitiendo propiedades con valores "n/a" o "unknown".
+
+La aplicación utiliza Tailwind CSS para los estilos y Next.js para el desarrollo web, cumpliendo con los requisitos establecidos. Se aprovecha la API proporcionada por Next.js y se ha desarrollado en JavaScript. La navegación entre páginas se realiza mediante el sistema de rutas del framework. La información de SWAPI se adapta a la vista requerida sin utilizar su librería. Además, la aplicación es responsive como un plus.
+
 ### Requerimientos:
 1. ✅ Implementar la conexión con SWAPI para obtener la información de los 6 films de Star Wars.
 2. ✅ Crear una landing page que permita navegar a las secciones de films y personajes.
